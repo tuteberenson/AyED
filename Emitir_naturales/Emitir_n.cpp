@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
 	
 	int cantidad, desde;
 	
-	cout << "Ingrese cantidad de numeros a imprimir...\n";
+	cout << "Ingrese cantidad de numeros a emitir...\n";
 	cin >> cantidad;
 	
 	cout << "Ingrese desde que numero empezar...\n";
@@ -19,5 +19,7 @@ int main(int argc, char *argv[]) {
 	{
 		cout  << desde + i << "\n";
 	}
-	return 0;
+	
+return 0;
 }
+
