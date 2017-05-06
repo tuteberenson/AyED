@@ -2,14 +2,32 @@
 #include <iostream>
 
 using namespace std;
-
+void convertirANumerosRomanos(int);
 
 int main()
 {
-	int n, m, c, d, e;
+	int n;
+	cout<< "Ingrese un numero entre 1000 y 2011";
+	cin >> n;
+	if(n >= 1000 && n <= 2011)
+	{
+		convertirANumerosRomanos(n);
+	}
+	else
+	{	
+	cout<< "Ingrese un numero entre 1000 y 2011";	
+	}
+	return 0;
+
+	
+}
+void convertirANumerosRomanos(int n)
+{
+	int m, c, d, e;
 	string nrm, nrc, nrd, nre;
 	
-	cin >> n;
+	
+	
 	
 	m = n /1000;
 		n -= m * 1000;
@@ -92,8 +110,6 @@ int main()
 		}
 		
 		cout << nrm << nrc << nrd << nre;
-		
-	return 0;
-
 	
 }
+
