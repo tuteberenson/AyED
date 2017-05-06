@@ -3,97 +3,95 @@
 
 using namespace std;
 
-string convertirANumerosRomanos(int);
 
-int main(int argc, char *argv[]) {
-	
-	int anio;
-	
-	cin >> anio;
-	
-	if(anio <= 2011 && anio >= 1000)
-	{
-		cout<< "El año " << anio << " en números romanos es: " << convertirANumerosRomanos(anio);
-	}
-	return 0;
-}
-
-string convertirANumerosRomanos(int anio)
+int main()
 {
-	string resultado ="";
-
-
-		
-		if(anio >= 2000)
-		{
-			resultado += "MM";
-			anio-=2000;
-		}
-		else if(anio >= 1000)
-		{
-			resultado += "M";
-			anio-=1000;
-		}else if(anio >= 900 )
-		{
-			resultado += "CM";
-			anio-=900;
-		}
-		
-		if(anio >= 500)
-		{
-			resultado += "D";
-			anio -= 500; 
-		}else if(anio >= 400)
-		{
-			resultado+="CD";
-			anio -= 400;
-		}
-		do 
-			{
-			
-		resultado+="C";
-		anio -= 100;
-			}
-		while(anio >= 100);
-		
-		if(anio >= 90)
-		{
-			resultado+="XC";
-			anio -= 90;
-		}
-		
-			do 
-			{
-			
-		resultado+="X";
-		anio -= 10;
-			}
-		while(anio >= 10);
-		
-		if(anio >= 9)
-		{
-			resultado+="IX";
-			anio -= 9;
-		}
-		
-		if(anio >= 5)
-		{
-			resultado += "V";
-			anio -= 5; 
-		}else if(anio >= 4)
-		{
-			resultado+="IV";
-			anio -= 4;
-		}
-			do 
-			{
-			
-		resultado+="I";
-		anio -= 1;
-			}while(anio >= 1);
-		
-		
+	int n, m, c, d, e;
+	string nrm, nrc, nrd, nre;
 	
+	cin >> n;
+	
+	m = n /1000;
+		n -= m * 1000;
+	while (m > 0)
+	{
+		nrm += "M";
+		m--;
+		}
 
-return resultado;
-} 
+	
+	
+	c = n/100;
+		n -= c*100;
+	while (c >0){
+		 if (c < 4 ||(c > 5 && c <9))
+		 {
+		 nrc += "C";
+		 c--;
+		 }
+		 if  (c == 4){
+		 	 nrc = "CD";
+		 	 c-=4;
+		 	}
+		 	if (c ==5){
+		 		nrc = "D";
+		 		c -= 5;
+		 		}
+		 		if( c== 9)
+		 		{
+		 			nrc = "MC";
+		 			c -=9;
+		 			}
+		 
+		}
+		
+		while (d >0){
+		 if (d < 4 || (d > 5 && d <9))
+		 {
+		 nrd += "X";
+		 }
+		 if  (d == 4){
+		 	 nrd = "XL";
+		 	 d-=4;
+		 	}
+		 	if (d ==5){
+		 		nrd = "L";
+		 		d -=5;
+		 		}
+		 		if (d==9)
+		 		{
+		 			nrd = "XC";
+		 			d -=9;
+		 			}
+		}
+	d= n/10;
+	n -= d*10;
+	
+	e =n;
+	
+	while (e >0){
+		 if (e < 4 || (e > 5 && e <9))
+		 {
+		 nre += "I";
+		 }
+		 if  (e == 4){
+		 	 nre = "IV";
+		 	 e-=4;
+		 	}
+		 	if (e ==5){
+		 		nre = "V";
+		 		e -=5;
+		 		}
+		 		if (e==9)
+		 		{
+		 			nre = "IX";
+		 			e -=9;
+		 			}
+		}
+		
+		cout << nrm << nrc << nrd << nre;
+		
+	return 0;
+
+	
+}
