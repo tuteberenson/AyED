@@ -44,11 +44,13 @@ int main()
 		 			}
 		 
 		}
-		
+	d= n/10;
+	n -= d*10;
 		while (d >0){
 		 if (d < 4 || (d > 5 && d <9))
 		 {
 		 nrd += "X";
+		 d--;
 		 }
 		 if  (d == 4){
 		 	 nrd = "XL";
@@ -64,8 +66,7 @@ int main()
 		 			d -=9;
 		 			}
 		}
-	d= n/10;
-	n -= d*10;
+
 	
 	e =n;
 	
@@ -73,6 +74,7 @@ int main()
 		 if (e < 4 || (e > 5 && e <9))
 		 {
 		 nre += "I";
+		 e--;
 		 }
 		 if  (e == 4){
 		 	 nre = "IV";
